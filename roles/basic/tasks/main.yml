@@ -1,0 +1,31 @@
+# single package install
+- name: "Installing VIM"
+  yum: pkg=vim state=installed
+
+# multiple package install
+- name: "Installing bind-utils, GIT, ntp, at, lvm2"
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - bind-utils
+      - git
+      - ntp
+      - at
+      - lvm2
+
+
+# copy
+- name: "Uploading file"
+  copy: src=../files/uploaded_file dest=~/uploaded_file owner=root mode=0644
+
+# backup file
+- name: "Backing up file"
+  shell: creates=~/uploaded_file_bck mv ~/uploaded_file ~/uploaded_file_bck
+
+# fetch from remtoes
+- name: "fetch from remotes"
+  fetch:
+    src: ~/local_file
+    dest: /tmp/ansibleT/l_f_{{ inventory_hostname }}
+    flat: yes
