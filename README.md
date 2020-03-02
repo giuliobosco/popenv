@@ -28,6 +28,7 @@ ansible-playbook playbook.yml
     - ntp
     - bind-utils
 - shell (zsh)
+    - https://github.com/gantsign/ansible-role-oh-my-zsh
 - basic gsoftware
     - gnome tweaks
     - google chrome
