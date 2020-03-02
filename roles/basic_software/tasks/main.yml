@@ -1,6 +1,6 @@
-# multiple package install
-- name: "Installing bind-utils, GIT, ntp, at, lvm2"
-  yum:
+
+- name: "Installing basic software"
+  apt:
     name: "{{ packages }}"
   vars:
     packages:
