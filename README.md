@@ -1,4 +1,4 @@
-# Learn Ansible
+# Set up 🔧 Pop!_OS 💻 environment
 
 Command:
 
