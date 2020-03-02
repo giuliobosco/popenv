@@ -21,10 +21,12 @@ ansible-playbook playbook.yml
 
 # todos
 
-- basic software 
+- basic software (done)
     - git
     - curl
     - vim
+    - ntp
+    - bind-utils
 - shell (zsh)
 - basic gsoftware
     - gnome tweaks
