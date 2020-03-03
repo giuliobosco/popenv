@@ -1,0 +1,5 @@
+- name: remove apt.conf for proxy
+  file:
+    path: /etc/apt/apt.conf
+    state: absent
+  changed_when: false

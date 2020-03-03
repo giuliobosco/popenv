@@ -1,0 +1,3 @@
+- name: update apt.conf for proxy
+  copy: src=../files/apt.conf dest=/etc/apt/apt.conf owner=root group=root mode=0644 
+  changed_when: false

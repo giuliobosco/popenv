@@ -1,5 +1,5 @@
 - name: update apt.conf for proxy
-  copy: src=../files/apt.conf dest=/etc/apt/apt.conf owner=root group=root mode=0644 
+  include: add_proxy.yml
 - name: cache
   apt:
     update_cache: yes
@@ -14,6 +14,4 @@
   apt: 
     name: python3
 - name: remove apt.conf for proxy
-  file:
-    path: /etc/apt/apt.conf
-    state: absent
+  include: remove_proxy.yml
