@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  remote_user: admin
+  roles:
+    - set_apt_proxy
+    - update
+    - basic_software
+    - role: gantsign.oh-my-zsh
+      users: 
+        - username: admin
+    - unset_apt_proxy
+
