@@ -1,0 +1,16 @@
+- name: add opera repository key
+  become: true
+  apt_key:
+    url: https://deb.opera.com/archive.key
+    state: present
+
+- name: add opera repository
+  become: true
+  apt_repository:
+    repo: deb https://deb.opera.com/opera-stable/ stable non-free
+
+- name: Installing opera
+  become: true
+  apt: 
+    name: opera-stable
+    update_cache: yes

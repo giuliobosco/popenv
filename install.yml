@@ -10,4 +10,4 @@
       users: 
         - username: admin
     - unset_apt_proxy
-
+    - browsers

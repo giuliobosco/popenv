@@ -37,10 +37,11 @@ ansible-playbook playbook.yml
 - shell (zsh) (done)
     - https://github.com/gantsign/ansible-role-oh-my-zsh
     - `$ ansible-galaxy install gantsign.oh-my-zsh` 
-- basic gsoftware
+- browsers (done)
     - google chrome
     - firefox
     - opera
+- basic gsoftware
     - tilix
     - vs code
     - wps
