@@ -21,13 +21,13 @@ ansible-playbook playbook.yml
 
 # todos
 
+- set_apt_proxy (todo templates)
+- unset_apt_proxy
 - upload (done)
-  - upload proxy file
   - cache
   - os dist
   - all packages
   - python3
-  - remove proxy file
 - basic software (done)
     - git
     - curl

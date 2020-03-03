@@ -1,4 +1,4 @@
-- name: remove apt.conf for proxy
+- name: remove conf file
   file:
     path: /etc/apt/apt.conf
     state: absent
