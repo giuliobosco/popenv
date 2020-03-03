@@ -34,10 +34,10 @@ ansible-playbook playbook.yml
     - vim
     - ntp
     - bind-utils
-- shell (zsh)
+- shell (zsh) (done)
     - https://github.com/gantsign/ansible-role-oh-my-zsh
+    - `$ ansible-galaxy install gantsign.oh-my-zsh` 
 - basic gsoftware
-    - gnome tweaks
     - google chrome
     - firefox
     - opera
@@ -66,4 +66,9 @@ ansible-playbook playbook.yml
 - fonts 
 - oh-my-shell 
 - powerlevel10k
+
+- gnome tweaks
+    - dash to dock
+    - desktop icons
+    - load conf
 
