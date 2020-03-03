@@ -9,5 +9,7 @@
     - role: gantsign.oh-my-zsh
       users: 
         - username: admin
-    - unset_apt_proxy
     - browsers
+    - basic_tools
+    - unset_apt_proxy
+    

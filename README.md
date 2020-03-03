@@ -41,7 +41,7 @@ ansible-playbook playbook.yml
     - google chrome
     - firefox
     - opera
-- basic gsoftware
+- basic tools (done)
     - tilix
     - vs code
     - wps
@@ -73,3 +73,4 @@ ansible-playbook playbook.yml
     - desktop icons
     - load conf
 
+REQUIRED REBOOT
