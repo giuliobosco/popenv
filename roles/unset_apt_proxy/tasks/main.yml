@@ -1,4 +1,5 @@
 - name: remove conf file
+  become: true
   file:
     path: /etc/apt/apt.conf
     state: absent
