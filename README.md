@@ -67,7 +67,7 @@ ansible-playbook playbook.yml
 - oh-my-shell 
 - powerlevel10k
 
-- gnome tweaks
+- gnome tweaks (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
     - dash to dock
     - desktop icons
     - load conf
