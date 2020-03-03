@@ -1,0 +1,19 @@
+- name: update apt.conf for proxy
+  copy: src=../files/apt.conf dest=/etc/apt/apt.conf owner=root group=root mode=0644 
+- name: cache
+  apt:
+    update_cache: yes
+- name: os (dist)
+  apt:
+    upgrade: dist
+- name: all packages
+  apt:
+    name: "*"
+    state: latest
+- name: python3
+  apt: 
+    name: python3
+- name: remove apt.conf for proxy
+  file:
+    path: /etc/apt/apt.conf
+    state: absent

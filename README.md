@@ -21,6 +21,13 @@ ansible-playbook playbook.yml
 
 # todos
 
+- upload (done)
+  - upload proxy file
+  - cache
+  - os dist
+  - all packages
+  - python3
+  - remove proxy file
 - basic software (done)
     - git
     - curl
