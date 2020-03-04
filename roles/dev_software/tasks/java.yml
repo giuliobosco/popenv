@@ -1,0 +1,30 @@
+- name: "Installing JRE & JDK"
+  become: true
+  apt: 
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - default-jre
+      - default-jdk
+
+- name: ensure gradle directory exists
+  become: true
+  file:
+    path: /opt/gradle
+    state: directory
+
+- name: Download & Unzip Gradle
+  become: yes
+  unarchive:
+    src: https://services.gradle.org/distributions/gradle-5.2.1-bin.zip
+    dest: /opt/gradle
+    remote_src: yes
+
+- name: Upload gradle.zsh
+  become: true
+  copy:
+    src: ../files/gradle.zsh 
+    dest: /etc/profile.d/gradle.zsh
+    owner: root
+    group: root
+    mode: 0755
