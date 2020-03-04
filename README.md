@@ -45,10 +45,14 @@ ansible-playbook playbook.yml
     - tilix
     - vs code
     - wps
-- advanced software
+- development software
+    - mysql (done)
+    - java
+    - gradle
     - php
+    - composer
+    - pip
     - nginx (php istance, empty istance)
-    - mysql
     - node
     - npm
     - go
