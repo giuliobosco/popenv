@@ -1,5 +1,6 @@
 
 - name: "Installing basic software"
+  become: true
   apt:
     name: "{{ packages }}"
   vars:

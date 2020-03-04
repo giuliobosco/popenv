@@ -51,6 +51,7 @@ ansible-playbook playbook.yml
     - mysql
     - node
     - npm
+    - go
     - docker
     - docker-compose
     - vmware
