@@ -3,3 +3,9 @@
     name: nginx
     state: restarted
     enabled: no
+
+- name: restart-fpm
+  systemd:
+    name: php7-fpm
+    state: restarted
+

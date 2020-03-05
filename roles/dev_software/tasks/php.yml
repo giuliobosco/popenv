@@ -1,0 +1,27 @@
+- name: Installing PHP
+  become: yes
+  apt:
+    name: "{{ packages }}"
+  vars: 
+    packages:
+      - php-fpm
+      - php-mysql
+
+- name: Upload PHP Info Page
+  become: yes
+  template:
+    src: ../files/info.php
+    dest: /var/www/html/info.php
+
+- name: Download Composer
+  script: ../scripts/install_composer.zsh
+
+- name: Move Composer Globally
+  become: yes
+  command: mv composer.phar /usr/local/bin/composer
+
+- name: Set Composer exection permissions
+  become: yes
+  file:
+    path: /usr/local/bin/composer
+    mode: "a+x"
