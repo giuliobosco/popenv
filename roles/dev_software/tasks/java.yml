@@ -13,12 +13,18 @@
     path: /opt/gradle
     state: directory
 
+- name: Check gradle
+  command: gradle -v
+  register: gradle_v_result
+  ignore_errors: yes
+
 - name: Download & Unzip Gradle
   become: yes
   unarchive:
     src: https://services.gradle.org/distributions/gradle-5.2.1-bin.zip
     dest: /opt/gradle
     remote_src: yes
+  when: gradle_v_result is not failed
 
 - name: Upload gradle.zsh
   become: true
