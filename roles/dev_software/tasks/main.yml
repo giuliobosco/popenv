@@ -1,2 +1,17 @@
 - name: Installing Java
   include: ./java.yml
+
+- name: Install Prerequisites
+  become: yes
+  apt:
+    name: aptitude
+
+- name: Installing NGINX
+  include: ./nginx.yml
+  vars:
+    http_conf: localhost
+    http_port: 80
+    http_host: localhost
+
+- name: Installing PHP
+  include: ./php.yml
