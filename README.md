@@ -80,3 +80,5 @@ ansible-playbook playbook.yml
     - load conf
 
 REQUIRED REBOOT
+
+FIX PROXY FOR ALL DOWNLOAD
