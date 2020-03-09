@@ -19,12 +19,14 @@
   ignore_errors: yes
 
 - name: Download Composer
+  become: yes
   script: ../scripts/install_composer.zsh
-  when: composer_v_result is not failed
+  when: composer_v_result is failed
 
 - name: Move Composer Globally
   become: yes
   command: mv composer.phar /usr/local/bin/composer
+  when: composer_v_result is failed
 
 - name: Set Composer exection permissions
   become: yes
