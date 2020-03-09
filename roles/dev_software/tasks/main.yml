@@ -62,3 +62,6 @@
     name: geerlingguy.docker
     apply: 
       become: yes
+
+- name: Install Virtual Box
+  include: ./virtualbox.yml

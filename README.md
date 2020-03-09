@@ -18,6 +18,14 @@ playbook:
 ansible-playbook playbook.yml
 ```
 
+## Variables:
+
+Insert in this line of `install.yml` file:
+
+```
+workstation_license: XXX-XXX-XXX
+```
+
 
 # todos
 

@@ -1,0 +1,19 @@
+- name: Add virtualbox repository key
+  become: yes
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items:
+    - https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    - https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: Add virtualbox repository
+  become: yes
+  apt_repository:
+    repo: deb https://download.virtualbox.org/virtualbox/debian eoan contrib
+
+- name: Install virtualbox
+  become: yes
+  apt: 
+    name: virtualbox-6.0
+    update_cache: yes
