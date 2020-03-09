@@ -1,0 +1,15 @@
+- name: install nodejs keys
+  become: yes
+  shell: |
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+
+- name: Install node
+  become: yes
+  apt:
+    name: nodejs
+
+- name: Update npm
+  become: yes
+  npm:
+    name: npm
+    global: yes
