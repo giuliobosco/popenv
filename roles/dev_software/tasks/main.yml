@@ -11,6 +11,14 @@
         done
         unset i
       fi
+      if [ -d /etc/profile.d ]; then
+        for i in /etc/profile.d/*.sh; do
+          if [ -r $i ]; then
+            . $i
+          fi
+        done
+        unset i
+      fi
 
 - name: Installing Java
   include: ./java.yml
@@ -37,3 +45,15 @@
 
 - name: Install Node.js
   include: ./node.yml
+
+- name: Install golang
+  include_role: 
+    name: gantsign.golang
+    apply:
+      become: yes
+
+- name: Install docker
+  include_role:
+    name: geerlingguy.docker
+    apply: 
+      become: yes
