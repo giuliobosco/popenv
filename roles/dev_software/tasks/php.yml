@@ -13,8 +13,14 @@
     src: ../files/info.php
     dest: /var/www/html/info.php
 
+- name: Check composer
+  command: composer -v 
+  register: composer_v_result
+  ignore_errors: yes
+
 - name: Download Composer
   script: ../scripts/install_composer.zsh
+  when: composer_v_result is not failed
 
 - name: Move Composer Globally
   become: yes
