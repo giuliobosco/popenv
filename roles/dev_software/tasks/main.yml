@@ -20,6 +20,11 @@
         unset i
       fi
 
+- name: Install sqlite3
+  become: yes
+  apt: 
+    name: sqlite3
+
 - name: Installing Java
   include: ./java.yml
 
