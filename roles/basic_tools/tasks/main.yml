@@ -1,0 +1,32 @@
+- name: Install tilix
+  become: true
+  apt:
+    update_cache: yes
+    name: tilix
+
+- name: add vscode repository key
+  become: true
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: add vscode repository
+  become: true
+  apt_repository:
+    repo: deb https://packages.microsoft.com/repos/vscode stable main
+
+- name: Installing vscode
+  become: true
+  apt: 
+    name: code
+    update_cache: yes
+ 
+- name: Install snapd
+  become: true
+  apt:
+    name: snapd
+
+- name: Installing wps-office
+  become: true
+  snap:
+    name: wps-office

@@ -1,10 +1,11 @@
 
 - name: "Installing basic software"
+  become: true
   apt:
     name: "{{ packages }}"
   vars:
     packages:
-      - bind-utils
+      - dnsutils
       - git
       - ntp
       - vim

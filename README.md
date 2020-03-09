@@ -21,35 +21,42 @@ ansible-playbook playbook.yml
 
 # todos
 
+- set_apt_proxy (todo templates)
+- unset_apt_proxy
 - upload (done)
-  - upload proxy file
   - cache
   - os dist
   - all packages
   - python3
-  - remove proxy file
 - basic software (done)
     - git
     - curl
     - vim
     - ntp
     - bind-utils
-- shell (zsh)
+- shell (zsh) (done)
     - https://github.com/gantsign/ansible-role-oh-my-zsh
-- basic gsoftware
-    - gnome tweaks
+    - `$ ansible-galaxy install gantsign.oh-my-zsh` 
+- browsers (done)
     - google chrome
     - firefox
     - opera
+- basic tools (done)
     - tilix
     - vs code
     - wps
-- advanced software
+- development software (done)
+    - mysql (done)
+    - sqlite3
+    - java
+    - gradle
     - php
+    - composer
+    - pip
     - nginx (php istance, empty istance)
-    - mysql
     - node
     - npm
+    - go
     - docker
     - docker-compose
     - vmware
@@ -67,3 +74,11 @@ ansible-playbook playbook.yml
 - oh-my-shell 
 - powerlevel10k
 
+- gnome tweaks (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
+    - dash to dock
+    - desktop icons
+    - load conf
+
+REQUIRED REBOOT
+
+FIX PROXY FOR ALL DOWNLOAD

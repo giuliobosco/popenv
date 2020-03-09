@@ -1,0 +1,64 @@
+- name: add load profile.d zsh
+  become: yes
+  blockinfile:
+    path: /etc/zsh/zprofile
+    block: |
+      if [ -d /etc/profile.d ]; then
+        for i in /etc/profile.d/*.zsh; do
+          if [ -r $i ]; then
+            . $i
+          fi
+        done
+        unset i
+      fi
+      if [ -d /etc/profile.d ]; then
+        for i in /etc/profile.d/*.sh; do
+          if [ -r $i ]; then
+            . $i
+          fi
+        done
+        unset i
+      fi
+
+- name: Install sqlite3
+  become: yes
+  apt: 
+    name: sqlite3
+
+- name: Installing Java
+  include: ./java.yml
+
+- name: Install Prerequisites
+  become: yes
+  apt:
+    name: aptitude
+
+- name: Installing NGINX
+  include: ./nginx.yml
+  vars:
+    http_conf: localhost
+    http_port: 80
+    http_host: localhost
+
+- name: Installing PHP
+  include: ./php.yml
+
+- name: Install PIP for python 3
+  become: yes
+  apt:
+    name: python3-pip
+
+- name: Install Node.js
+  include: ./node.yml
+
+- name: Install golang
+  include_role: 
+    name: gantsign.golang
+    apply:
+      become: yes
+
+- name: Install docker
+  include_role:
+    name: geerlingguy.docker
+    apply: 
+      become: yes

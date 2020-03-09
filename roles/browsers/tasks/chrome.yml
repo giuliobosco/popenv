@@ -1,0 +1,17 @@
+- name: Download Chrome
+  get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/google-chrome-stable_current_amd64.deb
+    mode: 0755
+  changed_when: false
+
+- name: Installing Chrome
+  become: true
+  apt:
+    deb: /tmp/google-chrome-stable_current_amd64.deb
+
+- name: Delete installation file
+  file: 
+    path: /tmp/google-chrome-stable_current_amd64.deb
+    state: absent
+  changed_when: false
