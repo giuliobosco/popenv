@@ -45,8 +45,9 @@ ansible-playbook playbook.yml
     - tilix
     - vs code
     - wps
-- development software
+- development software (done)
     - mysql (done)
+    - sqlite3
     - java
     - gradle
     - php
