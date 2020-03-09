@@ -14,9 +14,12 @@
     - unset_apt_proxy
     - role: lean_delivery.mysql
       become: yes
+    - dev_software
+    - vmware.vmware-workstation
   vars:
     mysql_root_password: root
     mysql_port: 3306
     mysql_bind_address: '0.0.0.0'
     mysql_daemon: mysqld
     mysql_version: 5.7
+    workstation_license: XXX-YYY-XXX
