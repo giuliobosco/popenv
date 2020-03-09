@@ -10,4 +10,4 @@
       - ntp
       - vim
       - curl
-
+      - vim-athena
