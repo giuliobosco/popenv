@@ -24,7 +24,7 @@
     src: https://services.gradle.org/distributions/gradle-5.2.1-bin.zip
     dest: /opt/gradle
     remote_src: yes
-  when: gradle_v_result is not failed
+  when: gradle_v_result is failed
 
 - name: Upload gradle.zsh
   become: true
@@ -34,3 +34,4 @@
     owner: root
     group: root
     mode: 0755
+  when: gradle_v_result is failed
