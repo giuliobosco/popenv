@@ -17,6 +17,7 @@
     - dev_software
     - vmware.vmware-workstation
     - ide
+    - powerlevel10k
   vars:
     mysql_root_password: root
     mysql_port: 3306
