@@ -1,0 +1,5 @@
+- src: gantsign.oh-my-zsh
+- src: lean_delivery.mysql
+- src: vmware.vmware-workstation
+- src: geerlingguy.docker
+- src: gantsign.golang

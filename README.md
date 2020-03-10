@@ -26,6 +26,12 @@ Install ansible on the machine where you play.
 
 [Ansible Installation Guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
+Install requirements from Ansible Galazy.
+
+```
+ansible-galaxy install -r requirements.yml
+```
+
 ## Install
 
 For play the playbook execute the following command.

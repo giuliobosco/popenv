@@ -10,16 +10,14 @@
     - MesloLGS_NF_Regular.ttf
 
 - name: Create powerlevel10k folder
-  become: yes
   file: 
-    path: /opt/powerlevel10k
+    path: ~/.oh-my-zsh/themes/powerlevel10k
     state: directory
 
 - name: Clone powerlevel10k
-  become: yes
   git:
      repo: https://github.com/romkatv/powerlevel10k.git
-     dest: /opt/powerlevel10k
+     dest: ~/.oh-my-zsh/themes/powerlevel10k
 
 - name: Set oh-my-shell theme
   lineinfile:
