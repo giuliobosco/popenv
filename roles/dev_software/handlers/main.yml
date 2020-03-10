@@ -1,10 +1,12 @@
 - name: restart-nginx
+  become: yes
   systemd:
     name: nginx
     state: restarted
     enabled: no
 
 - name: restart-fpm
+  become: yes
   systemd:
     name: php7-fpm
     state: restarted
