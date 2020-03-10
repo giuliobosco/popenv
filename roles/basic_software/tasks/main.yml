@@ -11,3 +11,14 @@
       - vim
       - curl
       - vim-athena
+
+- name: Copy .vimrc
+  copy: 
+    src: ../files/.vimrc
+    dest: ~/
+    owner: admin
+    group: admin
+    mode: 0600
+
+- name: VIM VundleVIM Install
+  command: vim +PluginInstall +qall
