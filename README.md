@@ -1,59 +1,66 @@
 # Set up 🔧 Pop!_OS 💻 environment
 
-Command:
+Ansible playbook for install my development environment, based on Pop!\_OS 19.10!
+
+## Before
+
+Before play the playbook take a look at those variables.
 
 ```
-ansible -m shell -a 'shutdown -h now' all -i hosts -u root
+mysql_root_password: root
+workstation_license: XXX-XXX-XX
 ```
 
-ping:
+Set your new machine ip (could be localhost) in `hosts` file and your sudo password.
 
 ```
-ansible all -m ping -i hosts --user root
+[popenv]
+pop                                             # machine address (hostname or ip)
+
+[popenv:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_sudo_pass=123qwe                        # sudo password
 ```
 
-playbook:
+Install ansible on the machine where you play.
+
+[Ansible Installation Guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+
+## Install
+
+For play the playbook execute the following command.
 
 ```
-ansible-playbook playbook.yml
+ansible-playbook -i hosts install.yml
 ```
 
+## what does install
 
-# todos
-
-- set_apt_proxy (todo templates)
-- unset_apt_proxy
-- upload (done)
-  - cache
-  - os dist
-  - all packages
-  - python3
-- basic software (done)
+- configure apt proxy [set_apt_proxy] (todo templates)
+- unconfigure apt proxy (do not leave credentials on the machine) [unset_apt_proxy]
+- upload apt cache, upgrade package and os [update]
+- Install base software and configure [base_software] 
     - git
     - curl
     - vim
     - ntp
     - bind-utils
-- shell (zsh) (done)
-    - https://github.com/gantsign/ansible-role-oh-my-zsh
-    - `$ ansible-galaxy install gantsign.oh-my-zsh` 
-- browsers (done)
-    - google chrome
-    - firefox
-    - opera
-- basic tools (done)
+    - vim-athena
+- Install zsh shell [gantsign.oh-my-zsh]
+- Install frequent used browsers [browsers]
+- Install basic tools [basic_tools]
     - tilix
     - vs code
     - wps
-- development software (done)
-    - mysql (done)
+- Install development software [dev_software]
+    - mysql
     - sqlite3
     - java
     - gradle
     - php
     - composer
     - pip
-    - nginx (php istance, empty istance)
+    - nginx
     - node
     - npm
     - go
@@ -61,24 +68,18 @@ ansible-playbook playbook.yml
     - docker-compose
     - vmware
     - virtual box
-- ides
+- Install most used IDEs [ide]
     - intellij
     - phpstorm
     - android studio
-- basic software 2
-    - brackets
-    - sublime text
-- vs code conf
-- vim conf
-- fonts 
-- oh-my-shell 
-- powerlevel10k
+- Setup ZSH theme powerlevel10k (with fonts) [powerlevel10k]
 
-- gnome tweaks (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
+# TODO List
+
+- Setup graphics gnome tweaks
+    - (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
     - dash to dock
     - desktop icons
     - load conf
-
-REQUIRED REBOOT
-
-FIX PROXY FOR ALL DOWNLOAD
+- Reboot at end
+- Proxy for each download

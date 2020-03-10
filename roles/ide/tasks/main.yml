@@ -1,0 +1,17 @@
+- name: Install PhpStorm
+  become: yes
+  snap: 
+    name: phpstorm
+    classic: yes
+
+- name: Install ItelliJ IDEA Ultimate
+  become: yes
+  snap:
+    name: intellij-idea-ultimate
+    classic: yes
+
+- name: Install Android Studio
+  become: yes
+  snap: 
+    name: android-studio
+    classic: yes

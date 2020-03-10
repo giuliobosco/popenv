@@ -10,4 +10,20 @@
       - ntp
       - vim
       - curl
+      - vim-athena
 
+- name: clone VundleVIM
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git 
+    dest: ~/.vim/bundle/Vundle.vim
+
+- name: Copy .vimrc
+  copy: 
+    src: ../files/.vimrc
+    dest: ~/
+    owner: admin
+    group: admin
+    mode: 0600
+
+- name: VIM VundleVIM Install
+  command: vim +PluginInstall +qall
