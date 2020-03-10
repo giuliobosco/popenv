@@ -79,7 +79,6 @@ workstation_license: XXX-XXX-XXX
 - vs code conf
 - vim conf
 - fonts 
-- oh-my-shell 
 - powerlevel10k
 
 - gnome tweaks (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
