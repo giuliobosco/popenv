@@ -1,0 +1,4 @@
+- name: clone nerd font
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts
+    dest: /usr/opt
