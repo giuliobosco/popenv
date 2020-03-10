@@ -12,6 +12,11 @@
       - curl
       - vim-athena
 
+- name: clone VundleVIM
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git 
+    dest: ~/.vim/bundle/Vundle.vim
+
 - name: Copy .vimrc
   copy: 
     src: ../files/.vimrc
