@@ -18,6 +18,11 @@
     - vmware.vmware-workstation
     - ide
     - powerlevel10k
+    - gnome
+  tasks:
+    - name: Rebooting
+      become: yes
+      reboot:
   vars:
     mysql_root_password: root
     mysql_port: 3306

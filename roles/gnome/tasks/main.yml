@@ -1,0 +1,36 @@
+- name: Unarchive dash to dock
+  become: yes
+  unarchive: 
+    src: dash-to-dockmicxgx.zip
+    dest: /usr/share/gnome-shell/extensions/
+
+- name: Remove OS X Bug files
+  become: true
+  file:
+    path: /usr/share/gnome-shell/extensions/__MACOSX
+    state:  absent
+
+- name: copy dash to dock to right folder
+  become: yes
+  copy:
+    remote_src: yes
+    src: /usr/share/gnome-shell/extensions/dash-to-dockmicxgx
+    dest: /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
+
+- name: delete old dash to dock folder
+  become: yes
+  file:
+    path: /usr/share/gnome-shell/extensions/dash-to-dockmicxgx
+    state: absent
+
+- name: enable dash to dock
+  command: gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+
+- name: Copy gnome conf
+  copy: 
+    src: saved_settings.dconf
+    dest: /tmp/saved_settings.dconf
+
+    #- name: load gnome configuration
+    #  command: "dconf load / < /tmp/saved_settings.dconf"
+
