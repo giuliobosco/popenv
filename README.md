@@ -79,9 +79,6 @@ ansible-playbook -i hosts install.yml
     - phpstorm
     - android studio
 - Setup ZSH theme powerlevel10k (with fonts) [powerlevel10k]
-
-# TODO List
-
 - Setup graphics gnome tweaks
     - (https://github.com/jaredhocutt/ansible-gnome-extensions cloning in roles folder)
     - dash to dock
